@@ -1,6 +1,5 @@
-function getWeatherData(cityData) {
-  // 天気のデータを取得
-  
+// 天気のデータを取得
+function getWeatherData(cityData) {  
   let targetCityName = cityData;
   let appId = "b40c5bbc82d4fa2558581d2a6898068d"
   
@@ -21,7 +20,6 @@ function getWeatherData(cityData) {
     if(xhr.readyState == 4){
       ShowTodaysWeather(xhr.responseText);
     }
-    console.log(xht.responseText);
   }
   // 今日の天気を表示する
   function ShowTodaysWeather(response) {
@@ -33,7 +31,6 @@ function getWeatherData(cityData) {
     let icon = obj.weather[0].icon;
     let humidity = obj.main.humidity
 
-    console.log(obj);
 
     // 天気を表示する要素を取得
     const listsWeather = document.getElementById("weather");
@@ -44,10 +41,17 @@ function getWeatherData(cityData) {
     listsHumidity.innerText = humidity + "%";
     const weatherIcon = document.getElementById("icon");
     weatherIcon.src = "http://openweathermap.org/img/wn/"+ icon + "@2x.png"
-    console.log(icon);
   }
 }
 
+// 都市名の取得
+function getCity() {
+  const city = document.getElementById("selectcity");
+  cityData = city.value
+  return cityData.innerText;
+}
+
+// 動作条件
 window.onload = function() {
   getCity();
   getWeatherData(cityData);
@@ -56,19 +60,3 @@ selectcity.onchange = function() {
   getCity();
   getWeatherData(cityData);
 }
-
-function getCity() {
-  const city = document.getElementById("selectcity");
-  cityData = city.value
-  return cityData.innerText;
-}
-
-function deleteWeather() {
-  // const lists = document.querySelector("li");
-  const lists = document.getElementById("cityweather");
-  console.log(lists);
-  while(lists.firstChild){
-    lists.removeChild(lists.firstChild);
-  }
-}
-
