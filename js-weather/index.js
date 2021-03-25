@@ -1,5 +1,5 @@
 // 天気のデータを取得
-function getWeatherData(cityData) {  
+const getWeatherData = (cityData) => {  
   let targetCityName = cityData;
   let appId = "b40c5bbc82d4fa2558581d2a6898068d"
   
@@ -45,7 +45,7 @@ function getWeatherData(cityData) {
 }
 
 // 都市名の取得
-function getCity() {
+const getCity = () => {
   const city = document.getElementById("selectcity");
   cityData = city.value
   return cityData.innerText;
