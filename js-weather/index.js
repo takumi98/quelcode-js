@@ -47,16 +47,14 @@ const getWeatherData = (cityData) => {
 // 都市名の取得
 const getCity = () => {
   const city = document.getElementById("selectcity");
-  cityData = city.value
-  return cityData.innerText;
+  const cityData = city.value
+  return cityData;
 }
 
 // 動作条件
 window.onload = function() {
-  getCity();
-  getWeatherData(cityData);
+  getWeatherData(getCity());
 }
 selectcity.onchange = function() {
-  getCity();
-  getWeatherData(cityData);
+  getWeatherData(getCity());
 }
