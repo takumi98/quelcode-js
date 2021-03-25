@@ -1,5 +1,5 @@
 // 今日の天気を表示する
-const ShowTodaysWeather = (response) => {
+const showTodaysWeather = (response) => {
   const obj = JSON.parse(response);
   const weather = obj.weather[0].description;
   const temp = obj.main.temp;
@@ -41,7 +41,7 @@ const getWeatherData = (cityData) => {
   xhr.onreadystatechange = () => {
     // 通信が完了
     if (xhr.readyState === 4) {
-      ShowTodaysWeather(xhr.responseText);
+      showTodaysWeather(xhr.responseText);
     }
   };
 };
