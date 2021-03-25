@@ -1,12 +1,12 @@
 // 天気のデータを取得
 const getWeatherData = (cityData) => {  
-  let targetCityName = cityData;
-  let appId = "b40c5bbc82d4fa2558581d2a6898068d"
+  const targetCityName = cityData;
+  const appId = "b40c5bbc82d4fa2558581d2a6898068d"
   
   const requestUrl = "https://api.openweathermap.org/data/2.5/weather?APPID=" + appId + "&lang=ja&units=metric&q=" + targetCityName + ",jp;"
   
   // Ajax通信用のオブジェクトを作成
-  let xhr = new XMLHttpRequest();
+  const xhr = new XMLHttpRequest();
   
   // 通信方式とURLを設定
   xhr.open("GET",requestUrl);
@@ -22,14 +22,14 @@ const getWeatherData = (cityData) => {
     }
   }
   // 今日の天気を表示する
-  function ShowTodaysWeather(response) {
+  const ShowTodaysWeather = (response) => {
     
-    let obj = JSON.parse(response);
+    const obj = JSON.parse(response);
 
-    let weathers = obj.weather[0].description;
-    let temps = obj.main.temp;
-    let icon = obj.weather[0].icon;
-    let humidity = obj.main.humidity
+    const weathers = obj.weather[0].description;
+    const temps = obj.main.temp;
+    const icon = obj.weather[0].icon;
+    const humidity = obj.main.humidity
 
 
     // 天気を表示する要素を取得
