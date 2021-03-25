@@ -52,9 +52,7 @@ const getCity = () => {
 }
 
 // 動作条件
-window.onload = function() {
-  getWeatherData(getCity());
-}
-selectcity.onchange = function() {
-  getWeatherData(getCity());
-}
+const draw = () => getWeatherData(getCity());
+
+window.onload = draw;
+selectcity.onchange = draw;
