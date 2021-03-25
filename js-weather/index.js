@@ -31,16 +31,16 @@ const getWeatherData = (cityData) => {
 const ShowTodaysWeather = (response) => {
   const obj = JSON.parse(response);
 
-  const weathers = obj.weather[0].description;
-  const temps = obj.main.temp;
+  const weather = obj.weather[0].description;
+  const temp = obj.main.temp;
   const icon = obj.weather[0].icon;
   const humidity = obj.main.humidity;
 
   // 天気を表示する要素を取得
   const listsWeather = document.getElementById("weather");
-  listsWeather.innerText = weathers;
+  listsWeather.innerText = weather;
   const listsTemp = document.getElementById("temp");
-  listsTemp.innerText = temps + "℃";
+  listsTemp.innerText = temp + "℃";
   const listsHumidity = document.getElementById("humidity");
   listsHumidity.innerText = humidity + "%";
   const weatherIcon = document.getElementById("icon");
