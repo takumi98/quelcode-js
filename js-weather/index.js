@@ -40,7 +40,7 @@ const getWeatherData = (cityData) => {
   // 通信ステータスが変わったら実行される関数
   xhr.onreadystatechange = () => {
     // 通信が完了
-    if (xhr.readyState == 4) {
+    if (xhr.readyState === 4) {
       ShowTodaysWeather(xhr.responseText);
     }
   };
