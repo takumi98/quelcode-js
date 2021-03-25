@@ -30,7 +30,6 @@ const getWeatherData = (cityData) => {
 // 今日の天気を表示する
 const ShowTodaysWeather = (response) => {
   const obj = JSON.parse(response);
-
   const weather = obj.weather[0].description;
   const temp = obj.main.temp;
   const icon = obj.weather[0].icon;
@@ -57,7 +56,6 @@ const getCity = () => {
 // 動作条件
 const draw = () => {
   getWeatherData(getCity());
-  ShowTodaysWeather();
 };
 
 window.onload = draw;
