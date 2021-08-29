@@ -23,11 +23,8 @@ img#icon {
   height: 150px
 }
 
-#cityweather {
-  width: 450px;
-  height: 450px;
-}
-
 .result {
-  display: inline-block;
+  display: block;
+  text-align: left;
+  padding-left: 170px;
 }

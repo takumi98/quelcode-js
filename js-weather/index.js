@@ -10,9 +10,9 @@ const showTodaysWeather = (response) => {
   const listsWeather = document.getElementById("weather");
   listsWeather.innerText = weather;
   const listsTemp = document.getElementById("temp");
-  listsTemp.innerText = temp + "℃";
+  listsTemp.innerText = "気温：" + temp + " ℃";
   const listsHumidity = document.getElementById("humidity");
-  listsHumidity.innerText = humidity + "%";
+  listsHumidity.innerText = "温度：" + humidity + " %";
   const weatherIcon = document.getElementById("icon");
   weatherIcon.src = "http://openweathermap.org/img/wn/" + icon + "@2x.png";
 };
